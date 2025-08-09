@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+</head>
+<body>
+
+    <center><b><i><h1 style="color: darkgreen;">Login Form</h1></b></i>
+    <form id="signupform">
+        <input type="text" id="name" placeholder="Enter Your Name">
+        <br><br>
+        <input type="email" id="email" placeholder="Enter Your Email">
+        <br><br>
+        <input type="password" id="password" placeholder="Enter Your Password">
+        <br><br>
+        <button type="submit" style="background-color:darkgreen; color: white;">Submit</button>
+    </form>
+
+    <p id="message" style="color: darkred;"></p>
+    
+    <script>
+        document.getElementById("signupform").addEventListener("submit", function (e) {
+            e.preventDefault(); // Prevent default form submission
+
+            let nameInput = document.getElementById("name");
+            let emailInput = document.getElementById("email");
+            let passwordInput = document.getElementById("password");
+            let message = document.getElementById("message");
+
+            let nameValue = nameInput.value.trim();
+            let emailValue = emailInput.value.trim();
+            let passwordValue = passwordInput.value.trim();
+
+            message.style.color = "red";
+            message.textContent = ""; 
+            // --- Corrected Validation for Empty Fields ---
+            if (!nameValue || !emailValue || !passwordValue) {
+                message.textContent = "All fields are required.";
+                return;
+            }
+
+            // Strong email pattern
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(emailValue)) {
+                message.textContent = "Invalid email format.";
+                return;
+            }
+
+            let passwordPattern = /^(?=.*[0-9]).{6,}$/;
+            if (!passwordPattern.test(passwordValue)) {
+                message.textContent = "Password must be at least 6 characters and contain numbers.";
+                return;
+            }
+
+            // Success
+            message.style.color = "green";
+            message.textContent = "Form submitted successfully!";
+
+            // Optionally, clear the form after successful submission
+            // nameInput.value = '';
+            // emailInput.value = '';
+            // passwordInput.value = '';
+        });
+        
+    </script>
+</center>
+</body>
+</html>

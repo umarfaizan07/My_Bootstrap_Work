@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dggfg</title>
+</head>
+<head>
+    <script>
+function ParagraphChanged() {
+  document.getElementById("demo3").innerHTML = "Paragraph changed ho chuka hai bhai.";
+}
+</script>
+</head>
+<body>
+
+    <button onclick="document.getElementById('bulb').src='pic_bulbon.gif'">On</button>
+    <img id="bulb" src="pic_bulboff.gif" alt="pic_bulboff">
+    <button onclick="document.getElementById('bulb').src='pic_bulboff.gif'">Off</button>
+<br><br>
+
+    <p id="demo">Hi I am Umar.</p>
+     <button type="button" onclick="document.getElementById('demo').style.fontSize='35px'">Click Me!</button>
+<br><br>
+
+    <p id="demo1">Hi I am Umar..</p>
+    <button type="button" onclick="document.getElementById('demo1').style.display='none'">Click Me!</button>
+<br><br>
+
+    <p>Hi I am a Umar </p>
+    <p id="demo2" style="display:none">Hello Umar!</p>
+    <button type="button" onclick="document.getElementById('demo2').style.display='block'">Click Me!</button>
+<br><br>
+    <p id="demo3">Hi I am Umar</p>
+    <button type="button" onclick="ParagraphChanged()">Click Me</button>
+
+
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event and input example</title>
+</head>
+<body>
+    <input type="text" name="" id="nameinput" placeholder="Enter Your name">
+    <button id="greetbtn">Say Hello</button>
+    <p id="greeting"></p>
+    
+
+
+<script>
+    document.getElementById("greetbtn").addEventListener("click", function(){
+    let name= document.getElementById("nameinput").value;
+    if (name.trim() !== "") {
+        document.getElementById("greeting").innerText="Hi " +name + " !";
+    }
+     else {
+       document.getElementById("greeting").innerText="please enter your name"; 
+    }
+    });
+</script>
+
+</body>
+</html>
